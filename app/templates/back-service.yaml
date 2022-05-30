@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: back
+  labels:
+    app: back
+spec:
+  ports:
+    - port: {{ .Values.appPort.back }}
+      name: http
+  selector:
+    app: back

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: front
+  name: front
+spec:
+  replicas: {{ .Values.replicaCount.front }}
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      containers:
+        - name: front
+          image: "{{ .Values.image.front.repository }}:{{ .Values.image.front.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: {{ .Values.appPort.front }}
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

@@ -16,7 +16,7 @@
 
 > каждый компонент приложения деплоится отдельным deployment’ом/statefulset’ом;
 
-В директории templates расположены:
+В директории charts/v1/templates расположены:
 
 - back-deployment.yaml
 - front-deployment.yaml

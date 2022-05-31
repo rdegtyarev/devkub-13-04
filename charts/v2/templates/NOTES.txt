@@ -1,0 +1,7 @@
+---------------------------------------------------------
+
+Content of NOTES.txt appears after deploy.
+Deployed front version {{ .Chart.AppVersion  }}
+Deployed back version {{ .Chart.AppVersion  }}
+
+---------------------------------------------------------

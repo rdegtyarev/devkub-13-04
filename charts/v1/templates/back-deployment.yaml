@@ -24,4 +24,4 @@ spec:
             - containerPort: {{ .Values.appPort.back }}
           env:
             - name: DATABASE_URL
-              value: "postgres://postgres:postgres@prod-db-srv.devkub-13-03:5432/news"
+              value: "postgres://postgres:postgres@db.{{ .Release.Namespace }}:5432/news"

@@ -1,0 +1,25 @@
+replicaCount:
+  front: 1
+  back: 1
+
+image:
+  front:
+    repository: rdegtyarev/netology-hw-13.04-front
+    # При указании пустого tag (tag: "") будет использоваться тег по умолчанию, соотвествующий версии приложения (appVersion)
+    tag: ""
+  back:
+    repository: rdegtyarev/netology-hw-13.04-back
+    # При указании пустого tag (tag: "") будет использоваться тег по умолчанию, соотвествующий версии приложения (appVersion)
+    tag: ""
+
+resources:
+   limits:
+     cpu: 200m
+     memory: 256Mi
+   requests:
+     cpu: 100m
+     memory: 128Mi
+
+appPort:
+  front: 80
+  back: 9000

@@ -27,13 +27,13 @@ spec:
           volumeMounts:
           - name: frontdata
             mountPath: /postgre
-  volumeClaimTemplates:
-  - metadata:
-      name: frontdata
-    spec:
-      storageClassName: "{{ .Values.storageClassName.front }}"
-      accessModes:
-        - ReadWriteMany
-      resources:
-        requests:
-          storage: "1Gi"
+    volumeClaimTemplates:
+    - metadata:
+        name: frontdata
+      spec:
+        storageClassName: "{{ .Values.storageClassName.front }}"
+        accessModes:
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: "1Gi"

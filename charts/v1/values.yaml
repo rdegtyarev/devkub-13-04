@@ -25,5 +25,5 @@ appPort:
   back: 9000
 
 storageClassName:
-  database: yc-csi-s3
+  database: yc-csi-s3-s3fs
   front: yc-csi-s3

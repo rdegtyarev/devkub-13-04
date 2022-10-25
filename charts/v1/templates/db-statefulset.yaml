@@ -15,6 +15,13 @@ spec:
         app: postgres
     spec:
       terminationGracePeriodSeconds: 10
+      initContainers:
+      - name: volume-mount-hack
+        image: busybox
+        command: ["sh", "-c", "chown -R 1001:1001 /var/lib/postgresql/data"]
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/postgresql/data
       containers:
       - name: postgres
         image: postgres:13-alpine

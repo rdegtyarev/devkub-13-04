@@ -25,4 +25,4 @@ appPort:
   back: 9000
 
 db:
-  storageClassName: "csi-s3"
+  storageClassName: csi-s3

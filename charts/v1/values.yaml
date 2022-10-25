@@ -26,4 +26,4 @@ appPort:
 
 storageClassName:
   database: s3backer
-  front: csi-s3
+  front: s3backer

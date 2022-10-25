@@ -25,11 +25,11 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-          - name: data
+          - name: frontdata
             mountPath: /postgre
   volumeClaimTemplates:
   - metadata:
-      name: data
+      name: frontdata
     spec:
       storageClassName: "{{ .Values.storageClassName.front }}"
       accessModes:

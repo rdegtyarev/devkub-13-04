@@ -35,7 +35,7 @@ spec:
   - metadata:
       name: data
     spec:
-      storageClassName: "nfs"
+      storageClassName: {{ .Values.db.storageClassName }}
       accessModes:
         - ReadWriteMany
       resources:

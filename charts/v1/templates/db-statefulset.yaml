@@ -35,7 +35,7 @@ spec:
   - metadata:
       name: data
     spec:
-      storageClassName: "{{ .Values.database.storageClassName }}"
+      storageClassName: "{{ .Values.storageClassName.database }}"
       accessModes:
         - ReadWriteMany
       resources:

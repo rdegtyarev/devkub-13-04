@@ -24,5 +24,6 @@ appPort:
   front: 80
   back: 9000
 
-database:
-  storageClassName: csi-s3
+storageClassName:
+  database: s3backer
+  front: csi-s3

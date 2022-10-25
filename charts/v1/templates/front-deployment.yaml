@@ -37,8 +37,8 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-          - mountPath: "/static"
-            name: prod-volume
+            - mountPath: "/static"
+              name: prod-volume
       volumes:
         - name: prod-volume
           persistentVolumeClaim:

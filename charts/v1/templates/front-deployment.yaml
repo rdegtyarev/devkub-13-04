@@ -24,16 +24,16 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-  #         volumeMounts:
-  #           - name: data
-  #             mountPath: /postgre
-  # volumeClaimTemplates:
-  # - metadata:
-  #     name: data
-  #   spec:
-  #     storageClassName: "{{ .Values.storageClassName.front }}"
-  #     accessModes:
-  #       - ReadWriteMany
-  #     resources:
-  #       requests:
-  #         storage: "1Gi"
+          volumeMounts:
+          - name: data
+            mountPath: /postgre
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      storageClassName: "{{ .Values.storageClassName.front }}"
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: "1Gi"

@@ -1,3 +1,15 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: frontdata
+spec:
+  storageClassName: "{{ .Values.storageClassName.front }}"
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,16 +36,7 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-          - name: frontdata
-            mountPath: /postgre
-    volumeClaimTemplates:
-    - metadata:
-        name: frontdata
-      spec:
-        storageClassName: "{{ .Values.storageClassName.front }}"
-        accessModes:
-          - ReadWriteMany
-        resources:
-          requests:
-            storage: "1Gi"
+      volumes:
+        - name: prod-volume
+          persistentVolumeClaim:
+            claimName: frontdata
